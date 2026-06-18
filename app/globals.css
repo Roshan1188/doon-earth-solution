@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fbfaf6;
+  --fg: #0e1410;
+  --brand: #487a1a;
+  --leaf: #a3c93f;
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@layer components {
+  .container-x { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2; }
+  .btn-primary { @apply btn bg-brand-700 text-white hover:bg-brand-800 hover:shadow-forest focus:ring-brand-500; }
+  .btn-ghost { @apply btn bg-white text-ink-900 ring-1 ring-bone-200 hover:bg-bone-50 focus:ring-brand-500; }
+  .btn-accent { @apply btn bg-leaf-500 text-ink-900 hover:bg-leaf-400 focus:ring-leaf-500; }
+  .btn-dark { @apply btn bg-ink-900 text-white hover:bg-ink-800 focus:ring-ink-700; }
+
+  .chip { @apply inline-flex items-center gap-2 rounded-full bg-brand-50 text-brand-800 px-3 py-1 text-xs font-medium ring-1 ring-brand-100; }
+  .chip-leaf { @apply inline-flex items-center gap-2 rounded-full bg-leaf-100 text-brand-800 px-3 py-1 text-xs font-semibold ring-1 ring-leaf-200; }
+  .chip-dark { @apply inline-flex items-center gap-2 rounded-full bg-ink-900 text-leaf-200 px-3 py-1 text-xs font-medium; }
+
+  .card { @apply rounded-2xl bg-white ring-1 ring-bone-200 shadow-soft; }
+  .card-dark { @apply rounded-2xl bg-ink-900 text-white ring-1 ring-white/10; }
+
+  .section { @apply py-7 sm:py-10 lg:py-12; }
+  .section-tight { @apply py-5 sm:py-7; }
+  .h-section { @apply text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-ink-900; }
+  .p-lead { @apply text-base sm:text-lg text-ink-700 leading-relaxed; }
+
+  .gradient-text {
+    background: linear-gradient(95deg, #2e4d12 0%, #487a1a 35%, #84b020 70%, #a3c93f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-text-dark {
+    background: linear-gradient(95deg, #0e1410 0%, #487a1a 60%, #a3c93f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass {
+    background: rgba(251, 250, 246, 0.78);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+  }
+
+  /* Decorative blob behind hero/about images */
+  .blob-leaf {
+    background: conic-gradient(from 90deg at 50% 50%, #a3c93f, #487a1a, #2e4d12, #84b020, #a3c93f);
+    filter: blur(0px);
+    border-radius: 42% 58% 60% 40% / 50% 45% 55% 50%;
+  }
+
+  /* Diagonal stripe ribbon */
+  .ribbon-stripes {
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(72,122,26,0.08) 0,
+      rgba(72,122,26,0.08) 8px,
+      transparent 8px,
+      transparent 18px
+    );
+  }
+
+  /* Section divider — organic SVG-like wave alternative using border */
+  .leaf-underline {
+    position: relative;
+  }
+  .leaf-underline::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -8px;
+    height: 6px; width: 64px;
+    background: linear-gradient(90deg, #487a1a, #a3c93f);
+    border-radius: 999px;
+  }
+}
+
+/* nice scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #fbfaf6; }
+::-webkit-scrollbar-thumb { background: #c6dfa1; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #84b020; }
+
+/* Selection */
+::selection { background: #a3c93f; color: #0e1410; }
