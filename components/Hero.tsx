@@ -138,12 +138,16 @@ export default function Hero() {
 
             {/* Main framed image */}
             <div className="relative rounded-[2rem] overflow-hidden ring-1 ring-bone-200 shadow-forest bg-bone-50">
-              <img
-                key={slide.key}
-                src={slide.image}
-                alt={slide.alt}
-                className="w-full h-[380px] sm:h-[460px] object-cover animate-fade-in"
-              />
+              {slides.map((s, i) => (
+                <img
+                  key={s.key}
+                  src={s.image}
+                  alt={s.alt}
+                  className={`w-full h-[380px] sm:h-[460px] object-cover transition-opacity duration-700 ${
+                    i === active ? 'opacity-100 relative' : 'opacity-0 absolute inset-0'
+                  }`}
+                />
+              ))}
 
               {/* Slide dots */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
