@@ -99,12 +99,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: site.url,
     telephone: site.phone,
     email: site.email,
+    image: `${site.url}/images/hero-side.jpg`,
     priceRange: '₹₹',
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address,
       addressCountry: 'IN',
     },
+    areaServed: [
+      { '@type': 'City', name: 'Dehradun' },
+      { '@type': 'State', name: 'Uttarakhand' },
+    ],
     openingHours: 'Mo-Sa 09:00-19:00',
     sameAs: Object.values(site.social).filter((u) => u && u !== '#'),
   };

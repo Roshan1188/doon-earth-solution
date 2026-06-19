@@ -6,7 +6,7 @@ import { site } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Contact Doon Earth Solution | Free Termite Inspection Dehradun',
   description:
-    'Book a free termite inspection in Dehradun. Call +91 86790 22742, email info@doonearthsolution.in or WhatsApp us. Doon Earth Solution replies within minutes.',
+    'Book a free termite inspection in Dehradun. Call +91 86790 22742, email info@doonearthsolutions.in or WhatsApp us. Doon Earth Solution replies within minutes.',
   alternates: { canonical: '/contact' },
 };
 
