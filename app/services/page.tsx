@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import ServiceCategories from '@/components/ServiceCategories';
 import Services from '@/components/Services';
 import Waterproofing from '@/components/Waterproofing';
 import CTA from '@/components/CTA';
@@ -64,6 +65,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      <ServiceCategories />
       <Services />
       <Waterproofing />
       <WhyUs />

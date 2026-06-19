@@ -82,11 +82,11 @@ export default function Waterproofing() {
   const [activeService, setActiveService] = useState<string | null>(null);
 
   return (
-    <section id="waterproofing" className="section relative">
+    <section id="waterproofing" className="section relative scroll-mt-20">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-leaf-300 to-transparent" />
       <div className="container-x">
         <div className="max-w-2xl">
-          <span className="chip-leaf">Waterproofing Services</span>
+          <span className="chip-leaf">Waterproofing Solutions</span>
           <h2 className="h-section mt-4 leaf-underline inline-block">Guaranteed leakage solutions for every surface.</h2>
           <p className="p-lead mt-6">
             From basements to terraces, we find the root of the leak and seal it

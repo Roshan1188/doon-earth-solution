@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import TrustBar from '@/components/TrustBar';
+import ServiceCategories from '@/components/ServiceCategories';
 import Services from '@/components/Services';
 import Waterproofing from '@/components/Waterproofing';
 import Gallery from '@/components/Gallery';
@@ -30,6 +31,7 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustBar />
+      <ServiceCategories />
       <Services />
       <Waterproofing />
       <Gallery />

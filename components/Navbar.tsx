@@ -7,7 +7,6 @@ import { site } from '@/lib/site';
 const links = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
-  { href: '/#waterproofing', label: 'Waterproofing' },
   { href: '/about', label: 'About' },
   { href: '/#process', label: 'Process' },
   { href: '/#faq', label: 'FAQ' },

@@ -58,12 +58,12 @@ export default function Services() {
   const [activeService, setActiveService] = useState<string | null>(null);
 
   return (
-    <section id="services" className="section relative">
+    <section id="termite-control" className="section relative scroll-mt-20">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-leaf-300 to-transparent" />
       <div className="container-x">
         <div className="max-w-2xl">
-          <span className="chip-leaf">Our Services</span>
-          <h2 className="h-section mt-4 leaf-underline inline-block">Treatments engineered to actually solve the problem.</h2>
+          <span className="chip-leaf">Anti-Termite Solutions</span>
+          <h2 className="h-section mt-4 leaf-underline inline-block">Termite treatments engineered to actually solve the problem.</h2>
           <p className="p-lead mt-6">
             Every property is different. We pick the right method, install it
             correctly, and stand behind it — in writing.
