@@ -43,7 +43,7 @@ export default function Promotions() {
               onClick={() => setOpen(i)}
               className="group card overflow-hidden hover:shadow-forest hover:-translate-y-1 transition-all duration-300 text-left"
             >
-              <div className="relative aspect-[3/4] overflow-hidden bg-ink-900">
+              <div className="relative aspect-[9/16] overflow-hidden bg-ink-900">
                 <img
                   src={p.src}
                   alt={p.alt}
