@@ -1,4 +1,4 @@
-# Doon Earth Solution — Website .
+# Doon Earth Solution — Website
 
 A modern, SEO-friendly Next.js + Tailwind site for a termite control business. WhatsApp-first lead capture, fully responsive, accessible, and fast.
 
