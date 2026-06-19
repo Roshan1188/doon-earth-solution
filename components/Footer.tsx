@@ -6,8 +6,8 @@ export default function Footer() {
     <footer className="mt-8 sm:mt-12 bg-ink-900 text-bone-100/80 relative overflow-hidden">
       <div className="absolute inset-0 ribbon-stripes opacity-40 pointer-events-none" aria-hidden />
       <div className="absolute -top-32 -right-32 h-80 w-80 rounded-full bg-leaf-500/10 blur-3xl pointer-events-none" aria-hidden />
-      <div className="container-x py-10 grid gap-8 lg:grid-cols-4 relative">
-        <div>
+      <div className="container-x py-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-5 relative">
+        <div className="sm:col-span-2 lg:col-span-1">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white p-1 ring-1 ring-white/10">
               <img
@@ -27,14 +27,26 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-semibold">Services</h4>
+          <h4 className="text-white font-semibold">Anti-Termite</h4>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/services#piping" className="hover:text-leaf-300">Anti-Termite Piping</Link></li>
             <li><Link href="/services#drill-fill" className="hover:text-leaf-300">Drill, Fill & Seal</Link></li>
-            <li><Link href="/services#soil" className="hover:text-leaf-300">Pre-Construction Soil Treatment</Link></li>
+            <li><Link href="/services#soil" className="hover:text-leaf-300">Soil Treatment</Link></li>
             <li><Link href="/services#spot" className="hover:text-leaf-300">Spot Treatment</Link></li>
             <li><Link href="/services#refill" className="hover:text-leaf-300">Pipe Refill Service</Link></li>
             <li><Link href="/services#inspection" className="hover:text-leaf-300">Inspection & Consultation</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-white font-semibold">Waterproofing</h4>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li><Link href="/services#wp-general" className="hover:text-leaf-300">Waterproofing (General)</Link></li>
+            <li><Link href="/services#wp-basement" className="hover:text-leaf-300">Basement Waterproofing</Link></li>
+            <li><Link href="/services#wp-terrace" className="hover:text-leaf-300">Terrace Waterproofing</Link></li>
+            <li><Link href="/services#wp-garden" className="hover:text-leaf-300">Garden & Planter</Link></li>
+            <li><Link href="/services#wp-injection" className="hover:text-leaf-300">Injection Grouting</Link></li>
+            <li><Link href="/services#wp-hdpe" className="hover:text-leaf-300">Membrane Systems</Link></li>
           </ul>
         </div>
 
