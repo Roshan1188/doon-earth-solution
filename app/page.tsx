@@ -3,6 +3,7 @@ import TrustBar from '@/components/TrustBar';
 import ServiceCategories from '@/components/ServiceCategories';
 import Services from '@/components/Services';
 import Waterproofing from '@/components/Waterproofing';
+import Promotions from '@/components/Promotions';
 import Gallery from '@/components/Gallery';
 import WhyUs from '@/components/WhyUs';
 import Process from '@/components/Process';
@@ -34,6 +35,7 @@ export default function HomePage() {
       <ServiceCategories />
       <Services />
       <Waterproofing />
+      <Promotions />
       <Gallery />
       <WhyUs />
       <Process />
