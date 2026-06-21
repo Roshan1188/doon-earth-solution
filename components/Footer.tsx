@@ -93,7 +93,10 @@ export default function Footer() {
       <div className="border-t border-white/10 relative">
         <div className="container-x py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-bone-200/60">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>Built with care · Termite control done right.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy-policy" className="hover:text-leaf-300">Privacy Policy</Link>
+            <p>Built with care · Termite control done right.</p>
+          </div>
         </div>
       </div>
     </footer>
