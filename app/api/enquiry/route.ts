@@ -41,7 +41,8 @@ export async function POST(req: NextRequest) {
   //   3. Copy the key from your email
   //   4. Vercel → Settings → Environment Variables → add WEB3FORMS_ACCESS_KEY
   //   5. Redeploy (push any small change)
-  const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+  // Web3Forms public access key (safe to commit — not a secret)
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY ?? 'ccb346b9-b6d9-4b32-ad75-9bea67a08945';
 
   if (accessKey) {
     try {
