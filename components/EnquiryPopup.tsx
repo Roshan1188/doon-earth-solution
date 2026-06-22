@@ -56,24 +56,41 @@ export default function EnquiryPopup({ onClose }: Props) {
     setStatus('submitting');
 
     try {
-      const res = await fetch('/api/enquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, email, service, message, source: 'popup' }),
-      });
+      // ── Call Web3Forms directly from browser (most reliable) ──────────────
+      const formData = new FormData();
+      formData.append('access_key', 'ccb346b9-b6d9-4b32-ad75-9bea67a08945');
+      formData.append('subject',    `🌿 New Enquiry: ${name} — ${service || 'General'}`);
+      formData.append('from_name',  name);
+      formData.append('name',       name);
+      formData.append('phone',      phone);
+      formData.append('email',      email || 'Not provided');
+      formData.append('service',    service || 'Not specified');
+      formData.append('message',    message || 'No message');
+      formData.append('source',     'Website Popup');
 
-      if (res.ok) {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json() as { success: boolean; message?: string };
+
+      if (data.success) {
+        // Also log to Vercel in background (fire & forget)
+        fetch('/api/enquiry', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, phone, email, service, message, source: 'popup' }),
+        }).catch(() => { /* ignore */ });
+
         setStatus('success');
-        // Auto-close popup after success message shows
         setTimeout(onClose, 4500);
       } else {
-        const data = await res.json().catch(() => ({}));
-        throw new Error((data as { error?: string }).error ?? 'Server error');
+        throw new Error(data.message ?? 'Submission failed');
       }
     } catch (err) {
       setStatus('error');
       setErrorMsg(
-        err instanceof Error && err.message !== 'Server error'
+        err instanceof Error
           ? err.message
           : 'Something went wrong. Please call us at +91 86790 22742.',
       );
