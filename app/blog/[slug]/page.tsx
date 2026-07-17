@@ -4,12 +4,22 @@ import { notFound } from 'next/navigation';
 import { blogPosts } from '@/lib/blog-posts';
 import CTA from '@/components/CTA';
 
+// Re-check publish dates at most once an hour, so a post whose date has just
+// arrived goes live without a new deploy, and future posts stay hidden until then.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
+function findPublishedPost(slug: string) {
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post) return undefined;
+  return new Date(post.publishedAt) <= new Date() ? post : undefined;
+}
+
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const post = findPublishedPost(params.slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -19,7 +29,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const post = findPublishedPost(params.slug);
   if (!post) notFound();
 
   const articleSchema = {

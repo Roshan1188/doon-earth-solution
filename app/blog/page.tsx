@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { blogPosts } from '@/lib/blog-posts';
+import { getPublishedPosts } from '@/lib/blog-posts';
 
 export const metadata: Metadata = {
   title: 'Termite & Waterproofing Guides',
@@ -9,8 +9,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog' },
 };
 
+// Re-check which posts are due to go live at most once an hour, so future-dated
+// posts appear automatically without a new deploy.
+export const revalidate = 3600;
+
 export default function BlogIndexPage() {
-  const posts = [...blogPosts].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
+  const posts = [...getPublishedPosts()].sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 
   return (
     <section className="relative">
