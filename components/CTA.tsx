@@ -10,7 +10,7 @@ export default function CTA() {
           <div className="absolute inset-0">
             <img
               src="/images/cta-bg.jpg"
-              alt=""
+              alt="Termite-free home protected by Doon Earth Solution treatment"
               className="absolute inset-0 h-full w-full object-cover opacity-40"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/85 to-brand-900/70" />

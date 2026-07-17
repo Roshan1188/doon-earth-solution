@@ -4,7 +4,7 @@ import QueryForm from '@/components/QueryForm';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Contact Doon Earth Solution | Free Termite Inspection Dehradun',
+  title: 'Free Termite Inspection | Contact Us',
   description:
     'Book a free termite inspection in Dehradun. Call +91 86790 22742, email info@doonearthsolutions.in or WhatsApp us. Doon Earth Solution replies within minutes.',
   alternates: { canonical: '/contact' },
@@ -103,6 +103,33 @@ export default function ContactPage() {
             <div className="card p-6 sm:p-8">
               <QueryForm />
             </div>
+          </div>
+        </div>
+
+        <div className="mt-10 grid lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="card p-6 sm:p-8">
+            <h2 className="font-display font-bold text-xl text-ink-900">Areas we serve around Dehradun</h2>
+            <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+              Doon Earth Solution serves homeowners, builders, and institutions across
+              Dehradun and the surrounding Uttarakhand region, including Rajpur Road,
+              Sahastradhara Road, Vasant Vihar, Clement Town, GMS Road, and Premnagar.
+              If you&apos;re outside these areas, reach out anyway — we regularly travel
+              for pre-construction soil treatment and larger commercial projects across
+              the state.
+            </p>
+          </div>
+          <div className="card p-6 sm:p-8">
+            <h2 className="font-display font-bold text-xl text-ink-900">What to expect on your call</h2>
+            <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+              When you call, WhatsApp, or submit the form, a real member of our team
+              responds — not a bot. We&apos;ll ask a few quick questions about the
+              property (age of construction, visible damage, and whether it&apos;s a
+              new build or an existing structure) so we can schedule the right
+              specialist. Most inspections are booked within 24 hours, and every
+              visit ends with a clear, written quote and warranty terms before any
+              work begins. There&apos;s no obligation to proceed after the free
+              inspection.
+            </p>
           </div>
         </div>
       </div>

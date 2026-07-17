@@ -13,9 +13,9 @@ import CTA from '@/components/CTA';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Termite Control in Dehradun | Anti-Termite Treatment with 10-Yr Warranty',
+  title: 'Termite Control in Dehradun | 10-Yr Warranty',
   description:
-    'Expert termite control in Dehradun by Doon Earth Solution. Anti-termite piping, drill-fill-seal & soil treatment with written multi-year warranty. Free inspection. Call now.',
+    'Expert termite control in Dehradun. Anti-termite piping, drill-fill-seal & soil treatment with written multi-year warranty. Free inspection. Call now.',
   keywords: [
     'termite control Dehradun',
     'anti termite treatment Dehradun',
